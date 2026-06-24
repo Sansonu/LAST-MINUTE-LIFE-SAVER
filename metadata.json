@@ -1,0 +1,6 @@
+{
+  "name": "The Last-Minute Life Saver",
+  "description": "An AI-powered productivity companion that helps you prioritize tasks, create daily schedules, and beat procrastination.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
