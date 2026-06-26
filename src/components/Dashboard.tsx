@@ -66,7 +66,7 @@ export default function Dashboard({
     <div className="flex flex-col gap-6 animate-fade-in">
       {/* 1. Habit Streaks / Gamification Hero Panel (AF-2) */}
       <div className={`bg-gradient-to-r ${badgeInfo.color} rounded-3xl p-6 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-md shadow-emerald-500/5`}>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center text-center sm:text-left gap-4">
           <div className="h-16 w-16 rounded-full bg-white/10 flex items-center justify-center text-white shrink-0 relative">
             <Flame className="h-9 w-9 fill-current animate-pulse text-amber-200" />
             {streak.currentStreak > 0 && (
@@ -78,7 +78,7 @@ export default function Dashboard({
 
           <div>
             <span className="text-[10px] font-black tracking-widest uppercase text-white/70 block mb-0.5">HABIT GAMIFICATION ACTIVE</span>
-            <h3 className="text-xl font-black flex items-center gap-1.5">
+            <h3 className="text-xl font-black flex items-center justify-center sm:justify-start gap-1.5">
               <Award className="h-5 w-5 text-amber-200" />
               {badgeInfo.title}
             </h3>
@@ -113,8 +113,8 @@ export default function Dashboard({
                 <Sparkles className="h-48 w-48" />
               </div>
 
-              <div className="flex items-center justify-between gap-3">
-                <span className="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">
+              <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-2.5">
+                <span className="bg-emerald-100 text-emerald-800 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider w-fit">
                   DO THIS NOW
                 </span>
                 <span className="text-xs font-bold text-slate-400 flex items-center gap-1">
@@ -164,10 +164,10 @@ export default function Dashboard({
                 </span>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
                 <button
                   onClick={() => onStartFocusTimer(topTask.id, topTask.estimatedMinutes)}
-                  className="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-md cursor-pointer flex items-center gap-1.5"
+                  className="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-md cursor-pointer flex items-center justify-center gap-1.5 w-full sm:w-auto"
                   id="dashboard-start-focus"
                 >
                   <Play className="h-4 w-4 fill-current text-emerald-400" />
@@ -176,7 +176,7 @@ export default function Dashboard({
 
                 <button
                   onClick={() => onCompleteTask(topTask.id)}
-                  className="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-150 font-bold text-xs px-5 py-3 rounded-xl transition-colors cursor-pointer flex items-center gap-1.5"
+                  className="bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-150 font-bold text-xs px-5 py-3 rounded-xl transition-colors cursor-pointer flex items-center justify-center gap-1.5 w-full sm:w-auto"
                   id="dashboard-complete-now"
                 >
                   <CheckCircle2 className="h-4 w-4" />
@@ -279,12 +279,12 @@ export default function Dashboard({
           {currentPlan ? (
             <div className="bg-white border border-slate-100 rounded-2xl p-5 shadow-sm flex flex-col gap-3">
               {currentPlan.timeBlocks.slice(0, 3).map((block) => (
-                <div key={block.id} className="flex items-center justify-between gap-3 p-2.5 rounded-xl border border-slate-50 bg-slate-50/45">
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs font-bold text-slate-500 shrink-0">
+                <div key={block.id} className="flex items-center justify-between gap-3 p-2.5 rounded-xl border border-slate-50 bg-slate-50/45 min-w-0">
+                  <div className="flex items-center gap-3 min-w-0 flex-1">
+                    <span className="font-mono text-[11px] font-bold text-slate-500 shrink-0">
                       {block.startTime} – {block.endTime}
                     </span>
-                    <h5 className="text-xs font-bold text-slate-800 truncate max-w-xs sm:max-w-md">
+                    <h5 className="text-xs font-bold text-slate-800 truncate flex-1 min-w-0">
                       {block.taskTitle}
                     </h5>
                   </div>

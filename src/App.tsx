@@ -248,7 +248,7 @@ export default function App() {
       </header>
 
       {/* Main Container Stage */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-24 sm:py-8">
         {currentTab === 'dashboard' && (
           <Dashboard
             tasks={tasks}
@@ -329,7 +329,7 @@ export default function App() {
       </main>
 
       {/* Footer info banner */}
-      <footer className="border-t border-slate-100 py-5 bg-white text-center text-xs text-slate-400 font-medium">
+      <footer className="border-t border-slate-100 pt-5 pb-20 md:pb-5 bg-white text-center text-xs text-slate-400 font-medium">
         <span>The Last-Minute Life Saver. Powered by Gemini Flash 3.5 — Stop reminding, start doing.</span>
       </footer>
 

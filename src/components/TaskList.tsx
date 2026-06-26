@@ -98,7 +98,7 @@ export default function TaskList({ tasks, goals, onToggleTask, onToggleSubtask, 
     <div className="flex flex-col gap-4">
       {/* Filters Bar */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-slate-50 p-2 rounded-xl border border-slate-150">
-        <div className="flex items-center gap-1">
+        <div className="flex flex-wrap items-center gap-1">
           {(['all', 'today', 'overdue', 'done'] as FilterTab[]).map((tab) => {
             const count = tasks.filter(t => {
               if (tab === 'done') return t.isCompleted;
@@ -160,12 +160,12 @@ export default function TaskList({ tasks, goals, onToggleTask, onToggleSubtask, 
               className={`border rounded-2xl p-5 flex flex-col gap-4.5 transition-all ${getUrgencyClass(task)}`}
               id={`task-card-${task.id}`}
             >
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex items-start gap-3">
+              <div className="flex items-start justify-between gap-3 min-w-0">
+                <div className="flex items-start gap-3 min-w-0 flex-1">
                   {/* Task Checkbox */}
                   <button
                     onClick={() => handleToggleCompletionClick(task)}
-                    className="mt-1 text-slate-400 hover:text-emerald-500 cursor-pointer transition-colors"
+                    className="mt-1 text-slate-400 hover:text-emerald-500 cursor-pointer transition-colors shrink-0"
                     id={`toggle-task-checkbox-${task.id}`}
                   >
                     {task.isCompleted ? (
@@ -175,12 +175,12 @@ export default function TaskList({ tasks, goals, onToggleTask, onToggleSubtask, 
                     )}
                   </button>
 
-                  <div className="flex flex-col gap-1">
-                    <span className={`text-base font-bold leading-tight ${task.isCompleted ? 'line-through text-slate-400' : 'text-slate-800'}`}>
+                  <div className="flex flex-col gap-1 min-w-0 flex-1">
+                    <span className={`text-base font-bold leading-tight break-words ${task.isCompleted ? 'line-through text-slate-400' : 'text-slate-800'}`}>
                       {task.title}
                     </span>
                     {task.description && (
-                      <p className={`text-xs ${task.isCompleted ? 'text-slate-400' : 'text-slate-500'}`}>
+                      <p className={`text-xs break-words ${task.isCompleted ? 'text-slate-400' : 'text-slate-500'}`}>
                         {task.description}
                       </p>
                     )}

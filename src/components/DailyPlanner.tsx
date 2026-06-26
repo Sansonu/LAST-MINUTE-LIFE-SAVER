@@ -158,7 +158,7 @@ export default function DailyPlanner({ tasks, settings, currentPlan, onSavePlan,
             </div>
 
             {/* Vertical Timeline list */}
-            <div className="flex flex-col gap-3.5 relative pl-4 sm:pl-6 before:absolute before:left-2 sm:before:left-3 before:top-4 before:bottom-4 before:w-0.5 before:bg-slate-200">
+            <div className="flex flex-col gap-3.5 relative pl-6 sm:pl-8 before:absolute before:left-[11px] sm:before:left-[15px] before:top-4 before:bottom-4 before:w-0.5 before:bg-slate-200">
               {currentPlan.timeBlocks.map((block) => {
                 const isCompleted = !!completedBlocks[block.id];
                 return (
@@ -167,8 +167,8 @@ export default function DailyPlanner({ tasks, settings, currentPlan, onSavePlan,
                     className={`relative border rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 transition-all shadow-sm ${getBlockTypeStyle(block.type, isCompleted)}`}
                     id={`time-block-${block.id}`}
                   >
-                    {/* Time dot indicator */}
-                    <div className={`absolute -left-[16px] sm:-left-[20px] top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full border-2 bg-white transition-all ${
+                    {/* Time dot indicator aligned with top-6 */}
+                    <div className={`absolute -left-[17px] sm:-left-[21px] top-6 -translate-y-1/2 h-2.5 w-2.5 rounded-full border-2 bg-white transition-all ${
                       isCompleted ? 'border-slate-350 bg-slate-350' : 'border-emerald-500'
                     }`}></div>
 

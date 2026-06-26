@@ -192,11 +192,11 @@ export default function GoalTracker({ goals, tasks, onAddGoal, onToggleGoal, onD
                     className="bg-white border border-slate-100 rounded-2xl p-5 flex flex-col gap-3.5 shadow-sm"
                     id={`goal-card-${goal.id}`}
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="flex items-start gap-3">
+                    <div className="flex items-start justify-between gap-3 min-w-0">
+                      <div className="flex items-start gap-3 min-w-0 flex-1">
                         <button
                           onClick={() => onToggleGoal(goal.id, !goal.isCompleted)}
-                          className={`mt-0.5 rounded-full p-0.5 transition-colors cursor-pointer ${
+                          className={`mt-0.5 rounded-full p-0.5 transition-colors cursor-pointer shrink-0 ${
                             goal.isCompleted
                               ? 'text-emerald-500 hover:text-emerald-600'
                               : 'text-slate-300 hover:text-emerald-500'
@@ -206,12 +206,12 @@ export default function GoalTracker({ goals, tasks, onAddGoal, onToggleGoal, onD
                           <CheckCircle className="h-5 w-5 fill-current bg-white" />
                         </button>
 
-                        <div className="flex flex-col">
-                          <span className={`text-base font-bold leading-tight ${goal.isCompleted ? 'line-through text-slate-400' : 'text-slate-800'}`}>
+                        <div className="flex flex-col min-w-0 flex-1">
+                          <span className={`text-base font-bold leading-tight break-words ${goal.isCompleted ? 'line-through text-slate-400' : 'text-slate-800'}`}>
                             {goal.title}
                           </span>
                           {goal.description && (
-                            <p className="text-xs text-slate-500 mt-1">
+                            <p className="text-xs text-slate-500 mt-1 break-words">
                               {goal.description}
                             </p>
                           )}

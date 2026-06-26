@@ -172,7 +172,7 @@ export default function VoiceAssistant({ tasks, goals, onAddTaskDraft, onNavigat
   return (
     <>
       {/* Floating Widget Trigger Button */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+      <div className="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-50 flex flex-col items-end gap-2">
         {!isMinimized && (
           <div className="bg-slate-900 text-slate-100 border border-slate-800 rounded-2xl shadow-2xl p-4 w-80 max-w-[calc(100vw-2rem)] mb-2 flex flex-col gap-3 relative animate-fade-in-up">
             <button 
